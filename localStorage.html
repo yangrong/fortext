@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lacalstorage</title>
+</head>
+<body>
+	<div id="count"></div>
+</body>
+<script type="text/javascript">
+	var storage = window.localStorage;
+	if (!storage.getItem("pageLoadCount")) storage.setItem("pageLoadCount", 0);
+	storage.pageLoadCount = parseInt(storage.getItem("pageLoadCount")) + 1; //必须格式转换
+	document.getElementById("count").innerHTML = storage.pageLoadCount;
+
+
+
+	// if (window.addEventListener) {
+	// 	window.addEventListener("storage", handle_storage, false);
+	// } else if (window.attachEvent) {
+	// 	window.attachEvent("onstorage", handle_storage);
+	// }
+
+	// function handle_storage(e) {
+	// 	if (!e) {
+	// 		e = window.event;
+	// 	}
+	// 	//showStorage();
+	// }
+</script>
+</html>
